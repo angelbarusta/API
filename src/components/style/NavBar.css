@@ -1,0 +1,26 @@
+.Container__Nav{
+    display: flex;
+    justify-content: space-between;
+    background: blue;
+    padding: 10px;
+}
+Container__Nav--Logo{
+    max-width: 200px;
+}
+.Container__Nav--AccountMenu{
+    display: flex;
+    justify-content: space-between;
+}
+.Container__Nav--AccountMenu div {
+    padding-left: 5px;
+}
+
+@media screen and (max-width:768px){
+    .Container__Nav{
+        display: flex;
+        justify-content: space-between;
+        background: blue;
+        padding: 10px;
+        width: 100%;
+    }
+}

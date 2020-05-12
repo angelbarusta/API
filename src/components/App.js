@@ -7,7 +7,7 @@ import Home from "../pages/Home";
 
 const App = () => {
   return (
-    <div>
+    <>
       <BrowserRouter>
         <Layout>
           <Switch>
@@ -15,7 +15,7 @@ const App = () => {
           </Switch>
         </Layout>
       </BrowserRouter>
-    </div>
+    </>
   );
 };
 
