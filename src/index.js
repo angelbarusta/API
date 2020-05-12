@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDom from "react-dom";
+import ReactDOM from "react-dom";
 import { createStore, compose } from "redux";
 import { Provider } from "react-redux";
 
@@ -11,7 +11,7 @@ const initialState = {
   myList: [],
 };
 
-const store = createStore(reducer, initialState, composeEnhancers());
+const store = createStore(reduce, initialState, composeEnhancers());
 const container = document.getElementById("app");
 
 ReactDOM.render(
