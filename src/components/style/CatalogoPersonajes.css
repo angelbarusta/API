@@ -42,6 +42,17 @@
     margin: auto;
   }
 
+  @media screen and (min-width:600px){
+    .Container__Personajes--Cartas{
+        margin: 5px;
+    width: 230px;
+    height: 230px;
+    background-color: white;
+    border-radius: 15%;
+    }
+  
+  }
+
   @media screen and (max-width:600px){
     .Container__Personajes--Cartas{
         margin: 5px;

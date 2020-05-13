@@ -1,7 +1,8 @@
 .Container__Nav{
     display: flex;
     justify-content: space-between;
-    background: blue;
+    background: #282840;
+    color: white;
     padding: 10px;
 }
 Container__Nav--Logo{
@@ -19,7 +20,8 @@ Container__Nav--Logo{
     .Container__Nav{
         display: flex;
         justify-content: space-between;
-        background: blue;
+        background: #282840;
+        color: white;
         padding: 10px;
         width: 100%;
     }

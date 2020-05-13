@@ -48,12 +48,27 @@ class CatalogoPersonajes extends Component {
           <h4>{item.name}</h4>
           <section className='Container__Personajes--Cartas__info'>
             <section>
-              <p>Estado:{item.status}</p>
-              <p>Especie{item.species}</p>
-              <p>Genero:{item.gender}</p>
+              <p>
+                <Icon name='heartbeat' />
+                {item.status}
+              </p>
+              <p>
+                <Icon name='dna' />
+                {item.species}
+              </p>
+              <p>
+                {item.gender == "Male" ? (
+                  <Icon name='mars' />
+                ) : item.gender == "Female" ? (
+                  <Icon name='venus' />
+                ) : (
+                  <Icon name='transgender' />
+                )}
+                {item.gender}
+              </p>
             </section>
             <section>
-              <p>Id:{item.id}</p>
+              <p>ID:{item.id}</p>
               <p>
                 <Icon name='map marker alternate' />
                 {item.location.name}
