@@ -11,15 +11,19 @@
     "build:dll": "webpack --config ./webpack.dll.config.js --mode production"
   },
   "dependencies": {
+    "@apollo/react-hooks": "^3.1.5",
     "@material-ui/core": "^4.9.9",
     "@material-ui/icons": "^4.9.1",
+    "apollo-boost": "^0.4.8",
     "bootstrap": "^4.3.1",
     "fetch": "^1.1.0",
+    "graphql": "^15.0.0",
     "react": "16.8.3",
+    "react-apollo": "^3.1.5",
     "react-dom": "16.8.3",
+    "react-router": "^5.1.2",
     "react-router-dom": "4.3.1",
-    "xmlhttprequest": "1.8.0",
-    "react-router": "^5.1.2"
+    "xmlhttprequest": "1.8.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",

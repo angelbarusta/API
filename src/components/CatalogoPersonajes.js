@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { gql } from "apollo-boost";
+import { Query } from "react-apollo";
 import { connect } from "react-redux";
 
 import "../components/style/CatalogoPersonajes.css";
@@ -6,84 +8,81 @@ import "../components/style/CatalogoPersonajes.css";
 import { setLista } from "../redux/actions";
 import { Image, Card, Icon } from "semantic-ui-react";
 
-const URL_API = "https://rickandmortyapi.com/api/character/";
-let arr = [];
+const characters = `{
+  characters{
+    results{
+      id
+      name
+      image
+      status
+      species
+      gender
+      location{
+        name
+      }
+      origin{
+        name
+      }
+    }
+  }
+}`;
+
+const ListaPersonajes = () => {
+  return (
+    <Query
+      query={gql`
+        ${characters}
+      `}>
+      {({ loading, error, data }) => {
+        if (loading) return <p>Loading...</p>;
+        if (error) return <p>Error :(</p>;
+        return data.characters.results.map((character) => (
+          <div key={character.id} className='Container__Personajes--Cartas'>
+            <img src={character.image} alt='imagenPersonaje' />
+            <h4>{character.name}</h4>
+            <section className='Container__Personajes--Cartas__info'>
+              <section>
+                <p>
+                  <Icon name='heartbeat' />
+                  {character.status}
+                </p>
+                <p>
+                  <Icon name='dna' />
+                  {character.species}
+                </p>
+                <p>
+                  {character.gender == "Male" ? (
+                    <Icon name='mars' />
+                  ) : character.gender == "Female" ? (
+                    <Icon name='venus' />
+                  ) : (
+                    <Icon name='transgender' />
+                  )}
+                  {character.gender}
+                </p>
+              </section>
+              <section>
+                <p>ID:{character.id}</p>
+                <p>
+                  <Icon name='map marker alternate' />
+                  {character.location.name}
+                </p>
+                <p>
+                  <Icon name='flag' />
+                  {character.origin.name}
+                </p>
+              </section>
+            </section>
+          </div>
+        ));
+      }}
+    </Query>
+  );
+};
 
 class CatalogoPersonajes extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      lista: [],
-    };
-  }
-
-  componentWillMount() {
-    this.fetchAsync();
-  }
-  fetchAsync = async () => {
-    try {
-      const data1 = await this.fetchData();
-      //const data2 = await this.loadingFinish();
-    } catch (error) {
-      console.error(error);
-    }
-  };
-  fetchData = () => {
-    fetch(URL_API)
-      .then((response) => response.json())
-      //.then((data) => console.log("data >> ", data.results))
-      .then((data) => {
-        this.setState({ lista: data.results });
-      })
-      .then(() => this.props.setLista(this.state.lista))
-      .catch((err) => console.error(err));
-  };
   render() {
-    const { lista } = this.state;
-    console.log("lista :>> ", lista);
-    const PERSONAJES = lista.map((item, i) => {
-      return (
-        <div key={i} className='Container__Personajes--Cartas'>
-          <img src={item.image} alt='imagenPersonaje' />
-          <h4>{item.name}</h4>
-          <section className='Container__Personajes--Cartas__info'>
-            <section>
-              <p>
-                <Icon name='heartbeat' />
-                {item.status}
-              </p>
-              <p>
-                <Icon name='dna' />
-                {item.species}
-              </p>
-              <p>
-                {item.gender == "Male" ? (
-                  <Icon name='mars' />
-                ) : item.gender == "Female" ? (
-                  <Icon name='venus' />
-                ) : (
-                  <Icon name='transgender' />
-                )}
-                {item.gender}
-              </p>
-            </section>
-            <section>
-              <p>ID:{item.id}</p>
-              <p>
-                <Icon name='map marker alternate' />
-                {item.location.name}
-              </p>
-              <p>
-                <Icon name='flag' />
-                {item.origin.name}
-              </p>
-            </section>
-          </section>
-        </div>
-      );
-    });
-
-    return <div className='Container__Personajes'>{PERSONAJES}</div>;
+    return <div className='Container__Personajes'>{<ListaPersonajes />}</div>;
   }
 }
 const mapDispatchToProps = {

@@ -2,9 +2,15 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { createStore, compose } from "redux";
 import { Provider } from "react-redux";
+import ApolloClient, { gql } from "apollo-boost";
+import { ApolloProvider, Query } from "react-apollo";
 
 import reduce from "./redux/reducer";
 import App from "./components/App";
+
+const client = new ApolloClient({
+  uri: "https://rickandmortyapi.com/graphql",
+});
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const initialState = {
@@ -16,7 +22,9 @@ const container = document.getElementById("app");
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <ApolloProvider client={client}>
+      <App />
+    </ApolloProvider>
   </Provider>,
   container
 );
