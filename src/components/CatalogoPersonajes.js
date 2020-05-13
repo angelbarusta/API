@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import "../components/style/CatalogoPersonajes.css";
 
 import { setLista } from "../redux/actions";
+import { Image, Card, Icon } from "semantic-ui-react";
 
 const URL_API = "https://rickandmortyapi.com/api/character/";
 let arr = [];
@@ -44,6 +45,12 @@ class CatalogoPersonajes extends Component {
       return (
         <div key={i} className='Container__Personajes--Cartas'>
           <img src={item.image} alt='imagenPersonaje' />
+          <h4>{item.name}</h4>
+          <section>
+            <p>{item.status}</p>
+            <p>{item.species}</p>
+            <p>{item.gender}</p>
+          </section>
         </div>
       );
     });
