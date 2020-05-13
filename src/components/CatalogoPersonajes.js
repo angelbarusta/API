@@ -46,10 +46,23 @@ class CatalogoPersonajes extends Component {
         <div key={i} className='Container__Personajes--Cartas'>
           <img src={item.image} alt='imagenPersonaje' />
           <h4>{item.name}</h4>
-          <section>
-            <p>{item.status}</p>
-            <p>{item.species}</p>
-            <p>{item.gender}</p>
+          <section className='Container__Personajes--Cartas__info'>
+            <section>
+              <p>Estado:{item.status}</p>
+              <p>Especie{item.species}</p>
+              <p>Genero:{item.gender}</p>
+            </section>
+            <section>
+              <p>Id:{item.id}</p>
+              <p>
+                <Icon name='map marker alternate' />
+                {item.location.name}
+              </p>
+              <p>
+                <Icon name='flag' />
+                {item.origin.name}
+              </p>
+            </section>
           </section>
         </div>
       );
