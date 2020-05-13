@@ -1,0 +1,19 @@
+.Container__Personajes{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.Container__Personajes--Cartas{
+    margin: 5px;
+    width: 100px;
+    height: 120px;
+    background-color: white;
+}
+.Container__Personajes--Cartas img{
+    width: 100%;
+    max-height: 80px;
+    object-fit: cover;
+    object-position: center center;
+}
