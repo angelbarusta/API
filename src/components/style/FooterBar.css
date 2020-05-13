@@ -1,0 +1,16 @@
+.Container__Footer{
+ display: flex;
+ justify-content: space-between;
+ background: #62ef26;
+ padding: 10px;
+}
+
+@media screen and (max-width:600px){
+    .Container__Footer{
+        display: flex;
+        justify-content: space-between;
+        background: #62ef26;
+        padding: 10px;
+        width: 100%;
+       }
+}
