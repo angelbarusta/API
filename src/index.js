@@ -21,10 +21,10 @@ const store = createStore(reduce, initialState, composeEnhancers());
 const container = document.getElementById("app");
 
 ReactDOM.render(
-  <Provider store={store}>
-    <ApolloProvider client={client}>
+  <ApolloProvider client={client}>
+    <Provider store={store}>
       <App />
-    </ApolloProvider>
-  </Provider>,
+    </Provider>
+  </ApolloProvider>,
   container
 );
