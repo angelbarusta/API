@@ -5,13 +5,15 @@ import "../components/style/CatalogoPersonajes.css";
 import { ALL_CHARACTERS } from "../GraphQL";
 import { ListaPersonajes } from "../components/ListaCards";
 
-const ListOfPersonCards = ({
-  data: { characters: { results = [] } = {} },
-} = {}) => {
-  console.log("results :>> ", results);
+// const grafo = ({
+//   data: { characters: { results = [] } = {} },
+// } = {});
+
+const ListOfPersonCards = ({ data = [] }) => {
+  console.log("fetch :>> ", data);
   return (
     <div className='Container__Personajes'>
-      <ListaPersonajes results={results} />
+      <ListaPersonajes {...data} />
     </div>
   );
 };
