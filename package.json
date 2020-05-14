@@ -1,7 +1,7 @@
 {
-  "name": "dragonballapi",
+  "name": "api",
   "version": "1.0.0",
-  "description": "API de dragonball",
+  "description": "API GraphQL",
   "main": "index.js",
   "scripts": {
     "server": "json-server --port 3001 --watch server/db.json --static ./dist",
@@ -72,15 +72,14 @@
     "url": "git+https://github.com/angelbarusta/dragonballAPI.git"
   },
   "keywords": [
-    "dragonball",
+    "GraphQL",
     "API",
-    "DRAGONBALL",
-    "dragonballAPI"
+    "REST"
   ],
   "author": "@angelbarusta",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/angelbarusta/dragonballAPI/issues"
+    "url": "https://github.com/angelbarusta/API/issues"
   },
-  "homepage": "https://github.com/angelbarusta/dragonballAPI#readme"
+  "homepage": "https://github.com/angelbarusta/API#readme"
 }

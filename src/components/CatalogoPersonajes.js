@@ -1,5 +1,4 @@
 import React from "react";
-import { gql, graphql } from "graphql-tag";
 
 import "../components/style/CatalogoPersonajes.css";
 
