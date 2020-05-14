@@ -2,20 +2,13 @@ import React from "react";
 
 import "../components/style/CatalogoPersonajes.css";
 
-import { ALL_CHARACTERS } from "../GraphQL";
 import { ListaPersonajes } from "../components/ListaCards";
 
-// const grafo = ({
-//   data: { characters: { results = [] } = {} },
-// } = {});
-
-const ListOfPersonCards = ({ data = [] }) => {
-  console.log("fetch :>> ", data);
+export const CatalogoPersonajes = ({ page = 1 }) => {
+  console.log("fetch :>> ", page);
   return (
     <div className='Container__Personajes'>
-      <ListaPersonajes {...data} />
+      <ListaPersonajes {...page} />
     </div>
   );
 };
-
-export const CatalogoPersonajes = ALL_CHARACTERS(ListOfPersonCards);
