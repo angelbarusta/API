@@ -13,7 +13,7 @@ const Home = () => {
         <button>Prev</button>
       </section>
       <section className='Data__content'>
-        <CatalogoPersonajes page={3} />
+        <CatalogoPersonajes pag={3} />
       </section>
     </div>
   );
