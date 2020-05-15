@@ -1,8 +1,9 @@
 import React from "react";
-// import { Query } from "react-apollo";
 import { Icon } from "semantic-ui-react";
 
-export const ListaPersonajes = ({
+import "../style/CatalogoPersonajes.css";
+
+export const PersonajesCard = ({
   image,
   id,
   status,
@@ -12,7 +13,6 @@ export const ListaPersonajes = ({
   species,
   location,
 }) => {
-  // console.log("data", characters);
   return (
     <div className='Container__Personajes--Cartas'>
       <img src={image} alt='imagenPersonaje' />
