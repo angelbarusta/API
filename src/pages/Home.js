@@ -3,7 +3,7 @@ import { gql } from "apollo-boost";
 import { Query } from "react-apollo";
 
 import "../pages/style/Home.css";
-import { CatalogoPersonajes } from "../components/CatalogoPersonajes";
+import CatalogoPersonajes from "../components/CatalogoPersonajes";
 
 const Home = () => {
   return (

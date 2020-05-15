@@ -2,9 +2,9 @@ import React from "react";
 import { useQuery } from "@apollo/react-hooks";
 import { Icon } from "semantic-ui-react";
 
-import { ALL_PERSONAJES } from "../../GraphQL";
+import ALL_PERSONAJES from "../../GraphQL";
 
-export const ListaPersonajes = ({ pag }) => {
+const ListaPersonajes = ({ pag }) => {
   //console.log("ALL_CHARACTERS_ListaPersonajes :>> ", ALL_PERSONAJES);
   console.log("pag_ListaPersonajes :>> ", pag);
   const { loading, error, data } = useQuery(ALL_PERSONAJES, {
@@ -54,3 +54,5 @@ export const ListaPersonajes = ({ pag }) => {
     </div>
   ));
 };
+
+export default ListaPersonajes;
