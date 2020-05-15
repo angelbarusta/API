@@ -4,9 +4,9 @@ import { gql } from "apollo-boost";
 
 import "../components/style/CatalogoPersonajes.css";
 
-import { ALL_CHARACTERS } from "../GraphQL";
+// import { ALL_CHARACTERS } from "../GraphQL";
 import { ListaPersonajes } from "../components/ListaCards";
-import { PersonCard } from "../components/PersonCard";
+// import { PersonCard } from "../components/PersonCard";
 
 // const grafo = ({
 //   data: { characters: { results = [] } = {} },
