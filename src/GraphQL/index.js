@@ -1,5 +1,6 @@
 import { graphql } from "react-apollo";
 import { gql } from "apollo-boost";
+//import gql from "graphql-tag";
 // import { graphql } from "graphql-tag";
 
 export const ALL_CHARACTERS = graphql(

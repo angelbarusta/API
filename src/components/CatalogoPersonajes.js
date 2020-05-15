@@ -1,21 +1,50 @@
 import React from "react";
+import { graphql } from "react-apollo";
+import { gql } from "apollo-boost";
 
 import "../components/style/CatalogoPersonajes.css";
 
 import { ALL_CHARACTERS } from "../GraphQL";
 import { ListaPersonajes } from "../components/ListaCards";
+import { PersonCard } from "../components/PersonCard";
 
 // const grafo = ({
 //   data: { characters: { results = [] } = {} },
 // } = {});
 
-const ListOfPersonCards = ({ data = [] }) => {
-  console.log("fetch :>> ", data);
+const whitPerson = graphql(gql`
+  query allCharacters($pag: Int) {
+    characters(page: $pag) {
+      results {
+        id
+        name
+        image
+        status
+        species
+        gender
+        location {
+          name
+        }
+        origin {
+          name
+        }
+      }
+    }
+  }
+`);
+
+const ListOfPersonCardsComponent = ({
+  data: { characters: { results = [] } = {} } = {},
+}) => {
+  console.log("results :>> ", results);
   return (
-    <div className='Container__Personajes'>
-      <ListaPersonajes {...data} />
-    </div>
+    <ul className='Container__Personajes'>
+      {/* <ListaPersonajes {...data} /> */}
+      {results.map((item) => (
+        <ListaPersonajes key={item.id} {...item} />
+      ))}
+    </ul>
   );
 };
 
-export const CatalogoPersonajes = ALL_CHARACTERS(ListOfPersonCards);
+export const CatalogoPersonajes = whitPerson(ListOfPersonCardsComponent);
