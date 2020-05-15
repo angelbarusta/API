@@ -7,9 +7,9 @@ import { ALL_PERSONAJES } from "../../GraphQL";
 export const ListaPersonajes = ({ pag }) => {
   //console.log("ALL_CHARACTERS_ListaPersonajes :>> ", ALL_PERSONAJES);
   console.log("pag_ListaPersonajes :>> ", pag);
-  ({ loading, error, data } = useQuery(ALL_PERSONAJES, {
+  const { loading, error, data } = useQuery(ALL_PERSONAJES, {
     variables: { pag },
-  }));
+  });
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;

@@ -3,8 +3,8 @@ import gql from "graphql-tag";
 //import { gql } from "apollo-boost";
 
 export const ALL_PERSONAJES = gql`
-  query($pag: Int) {
-    characters(page: $pag) {
+  query {
+    characters {
       results {
         id
         name
