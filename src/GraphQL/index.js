@@ -2,7 +2,7 @@
 import gql from "graphql-tag";
 //import { gql } from "apollo-boost";
 
-const ALL_PERSONAJES = gql`
+export const ALL_PERSONAJES = gql`
   query allCharacters($pag: Int) {
     characters(page: $pag) {
       results {
@@ -22,4 +22,3 @@ const ALL_PERSONAJES = gql`
     }
   }
 `;
-export default ALL_PERSONAJES;
