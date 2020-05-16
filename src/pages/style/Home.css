@@ -10,12 +10,19 @@
 
 .Menu__Bar{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 0px 0px 10px;
     width: 20%;
     height: 100vh;
     background-color: #111b2b;
     color: white;
+}
+.Menu__Bar div{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: 20px;
+    padding: 0px 5px 0px 5px;
+    grid-gap: 10px;
 }
 .Data__content{
     display: flex;
