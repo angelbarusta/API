@@ -23,6 +23,7 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
+        exclude: /node_modules/,
         use: {
           loader: "babel-loader",
           options: {
@@ -33,7 +34,6 @@ module.exports = {
             ],
           },
         },
-        exclude: /node_modules/,
       },
       {
         test: /\.css$/,
@@ -51,16 +51,16 @@ module.exports = {
         test: /\.styl$/,
         use: ["style-loader", "css-loader", "stylus-loader"],
       },
-      {
-        test: /\.jpg|png|gif|woff|eot|ttf|svg|mp4|webm$/,
-        use: {
-          loader: "file-loader", //url-loader
-          options: {
-            //limit: 90000,
-            outputPath: "assets/",
-          },
-        },
-      },
+      // {
+      //   test: /\.jpg|png|gif|jpeg|woff|eot|ttf|svg|mp4|webm$/,
+      //   use: {
+      //     loader: "file-loader", //url-loader
+      //     options: {
+      //       //limit: 90000,
+      //       outputPath: "assets/",
+      //     },
+      //   },
+      // },
     ],
   },
   plugins: [
