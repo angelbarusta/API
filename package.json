@@ -7,6 +7,7 @@
     "server": "json-server --port 3001 --watch server/db.json --static ./dist",
     "seed": "node server/seed.js",
     "start": "webpack-dev-server --config ./webpack.dev.config.js --mode development",
+    "dev": "webpack-dev-server --config ./webpack.dev2.config.js --mode development",
     "build": "webpack --config ./webpack.config.js --mode production",
     "build:dll": "webpack --config ./webpack.dll.config.js --mode production"
   },
