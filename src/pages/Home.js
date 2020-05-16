@@ -1,6 +1,4 @@
 import React from "react";
-import { gql } from "apollo-boost";
-import { Query } from "react-apollo";
 
 import "../pages/style/Home.css";
 import CatalogoPersonajes from "../components/CatalogoPersonajes";
