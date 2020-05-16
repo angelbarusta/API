@@ -3,16 +3,8 @@ import { Icon } from "semantic-ui-react";
 
 import "../style/CatalogoPersonajes.css";
 
-export const PersonajesCard = ({
-  image,
-  id,
-  status,
-  origin,
-  gender,
-  name,
-  species,
-  location,
-}) => {
+export const PersonajesCard = (props) => {
+  const { name, id, status, origin, gender, image, species, location } = props;
   return (
     <div className='Container__Personajes--Cartas'>
       <img src={image} alt='imagenPersonaje' />
