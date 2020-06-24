@@ -1,11 +1,15 @@
-const reducer = (state, actions) => {
+const initialState = {
+  myList: [],
+};
+
+const reducer = (state = initialState, action) => {
   console.log("state :>> ", state);
-  console.log("actions.payload :>> ", actions.payload);
-  switch (actions.type) {
+  console.log("action.payload :>> ", action.payload);
+  switch (action.type) {
     case "SET_LIST":
       return {
         ...state,
-        myList: [actions.payload],
+        myList: [action.payload],
       };
     default:
       return state;
